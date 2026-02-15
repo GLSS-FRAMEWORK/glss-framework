@@ -1,0 +1,250 @@
+{
+  "type": "bundle",
+  "id": "bundle--glss-framework-v1.1",
+  "spec_version": "2.1",
+  "created": "2026-02-15T00:00:00.000Z",
+  "modified": "2026-02-15T00:00:00.000Z",
+  "objects": [
+    {
+      "type": "x-mitre-matrix",
+      "id": "x-mitre-matrix--glss-framework",
+      "name": "GLSS Framework Matrix",
+      "description": "Ground-Link-Space Security — Unified threat modeling framework for space systems cybersecurity.",
+      "created": "2026-02-15T00:00:00.000Z",
+      "modified": "2026-02-15T00:00:00.000Z",
+      "tactic_refs": [
+        "x-mitre-tactic--glss-ground-reconnaissance",
+        "x-mitre-tactic--glss-ground-initial-access",
+        "x-mitre-tactic--glss-ground-execution",
+        "x-mitre-tactic--glss-ground-persistence",
+        "x-mitre-tactic--glss-ground-privilege-escalation",
+        "x-mitre-tactic--glss-ground-lateral-movement",
+        "x-mitre-tactic--glss-ground-collection",
+        "x-mitre-tactic--glss-ground-exfiltration",
+        "x-mitre-tactic--glss-ground-impact",
+        "x-mitre-tactic--glss-link-signal-reconnaissance",
+        "x-mitre-tactic--glss-link-signal-interception",
+        "x-mitre-tactic--glss-link-signal-injection",
+        "x-mitre-tactic--glss-link-signal-jamming",
+        "x-mitre-tactic--glss-link-signal-spoofing",
+        "x-mitre-tactic--glss-link-protocol-exploitation",
+        "x-mitre-tactic--glss-space-initial-compromise",
+        "x-mitre-tactic--glss-space-payload-manipulation",
+        "x-mitre-tactic--glss-space-firmware-tampering",
+        "x-mitre-tactic--glss-space-data-exfiltration",
+        "x-mitre-tactic--glss-space-denial-of-service",
+        "x-mitre-tactic--glss-space-orbital-impact"
+      ]
+    },
+    {
+      "type": "x-mitre-tactic",
+      "id": "x-mitre-tactic--glss-ground-reconnaissance",
+      "name": "Ground Reconnaissance",
+      "description": "Techniques used to gather information about ground segment infrastructure including control centers, ground stations, and supporting IT/OT systems.",
+      "x_mitre_shortname": "ground-reconnaissance",
+      "x_glss_segment": "ground",
+      "created": "2026-02-15T00:00:00.000Z",
+      "modified": "2026-02-15T00:00:00.000Z"
+    },
+    {
+      "type": "x-mitre-tactic",
+      "id": "x-mitre-tactic--glss-ground-initial-access",
+      "name": "Ground Initial Access",
+      "description": "Techniques used to gain initial foothold in ground segment systems.",
+      "x_mitre_shortname": "ground-initial-access",
+      "x_glss_segment": "ground",
+      "created": "2026-02-15T00:00:00.000Z",
+      "modified": "2026-02-15T00:00:00.000Z"
+    },
+    {
+      "type": "x-mitre-tactic",
+      "id": "x-mitre-tactic--glss-ground-execution",
+      "name": "Ground Execution",
+      "description": "Techniques used to execute malicious code on ground segment infrastructure.",
+      "x_mitre_shortname": "ground-execution",
+      "x_glss_segment": "ground",
+      "created": "2026-02-15T00:00:00.000Z",
+      "modified": "2026-02-15T00:00:00.000Z"
+    },
+    {
+      "type": "x-mitre-tactic",
+      "id": "x-mitre-tactic--glss-ground-persistence",
+      "name": "Ground Persistence",
+      "description": "Techniques used to maintain access to ground segment systems across restarts and credential changes.",
+      "x_mitre_shortname": "ground-persistence",
+      "x_glss_segment": "ground",
+      "created": "2026-02-15T00:00:00.000Z",
+      "modified": "2026-02-15T00:00:00.000Z"
+    },
+    {
+      "type": "x-mitre-tactic",
+      "id": "x-mitre-tactic--glss-ground-privilege-escalation",
+      "name": "Ground Privilege Escalation",
+      "description": "Techniques used to gain higher-level permissions on ground segment systems, including access to mission-critical control interfaces.",
+      "x_mitre_shortname": "ground-privilege-escalation",
+      "x_glss_segment": "ground",
+      "created": "2026-02-15T00:00:00.000Z",
+      "modified": "2026-02-15T00:00:00.000Z"
+    },
+    {
+      "type": "x-mitre-tactic",
+      "id": "x-mitre-tactic--glss-ground-lateral-movement",
+      "name": "Ground Lateral Movement",
+      "description": "Techniques used to move through ground segment networks, pivoting from IT to OT and mission control systems.",
+      "x_mitre_shortname": "ground-lateral-movement",
+      "x_glss_segment": "ground",
+      "created": "2026-02-15T00:00:00.000Z",
+      "modified": "2026-02-15T00:00:00.000Z"
+    },
+    {
+      "type": "x-mitre-tactic",
+      "id": "x-mitre-tactic--glss-ground-collection",
+      "name": "Ground Collection",
+      "description": "Techniques used to gather mission data, telemetry, and operational information from ground segment systems.",
+      "x_mitre_shortname": "ground-collection",
+      "x_glss_segment": "ground",
+      "created": "2026-02-15T00:00:00.000Z",
+      "modified": "2026-02-15T00:00:00.000Z"
+    },
+    {
+      "type": "x-mitre-tactic",
+      "id": "x-mitre-tactic--glss-ground-exfiltration",
+      "name": "Ground Exfiltration",
+      "description": "Techniques used to steal data from ground segment infrastructure.",
+      "x_mitre_shortname": "ground-exfiltration",
+      "x_glss_segment": "ground",
+      "created": "2026-02-15T00:00:00.000Z",
+      "modified": "2026-02-15T00:00:00.000Z"
+    },
+    {
+      "type": "x-mitre-tactic",
+      "id": "x-mitre-tactic--glss-ground-impact",
+      "name": "Ground Impact",
+      "description": "Techniques used to disrupt, degrade or destroy ground segment operations and mission control capabilities.",
+      "x_mitre_shortname": "ground-impact",
+      "x_glss_segment": "ground",
+      "created": "2026-02-15T00:00:00.000Z",
+      "modified": "2026-02-15T00:00:00.000Z"
+    },
+    {
+      "type": "x-mitre-tactic",
+      "id": "x-mitre-tactic--glss-link-signal-reconnaissance",
+      "name": "Link Signal Reconnaissance",
+      "description": "Techniques used to identify and characterize communication links between ground and space segments.",
+      "x_mitre_shortname": "link-signal-reconnaissance",
+      "x_glss_segment": "link",
+      "created": "2026-02-15T00:00:00.000Z",
+      "modified": "2026-02-15T00:00:00.000Z"
+    },
+    {
+      "type": "x-mitre-tactic",
+      "id": "x-mitre-tactic--glss-link-signal-interception",
+      "name": "Link Signal Interception",
+      "description": "Techniques used to intercept and eavesdrop on communications between ground and space segments.",
+      "x_mitre_shortname": "link-signal-interception",
+      "x_glss_segment": "link",
+      "created": "2026-02-15T00:00:00.000Z",
+      "modified": "2026-02-15T00:00:00.000Z"
+    },
+    {
+      "type": "x-mitre-tactic",
+      "id": "x-mitre-tactic--glss-link-signal-injection",
+      "name": "Link Signal Injection",
+      "description": "Techniques used to inject malicious commands or data into communication links.",
+      "x_mitre_shortname": "link-signal-injection",
+      "x_glss_segment": "link",
+      "created": "2026-02-15T00:00:00.000Z",
+      "modified": "2026-02-15T00:00:00.000Z"
+    },
+    {
+      "type": "x-mitre-tactic",
+      "id": "x-mitre-tactic--glss-link-signal-jamming",
+      "name": "Link Signal Jamming",
+      "description": "Techniques used to disrupt or deny communication between ground and space segments through electromagnetic interference.",
+      "x_mitre_shortname": "link-signal-jamming",
+      "x_glss_segment": "link",
+      "created": "2026-02-15T00:00:00.000Z",
+      "modified": "2026-02-15T00:00:00.000Z"
+    },
+    {
+      "type": "x-mitre-tactic",
+      "id": "x-mitre-tactic--glss-link-signal-spoofing",
+      "name": "Link Signal Spoofing",
+      "description": "Techniques used to forge or replay legitimate signals to deceive ground or space systems.",
+      "x_mitre_shortname": "link-signal-spoofing",
+      "x_glss_segment": "link",
+      "created": "2026-02-15T00:00:00.000Z",
+      "modified": "2026-02-15T00:00:00.000Z"
+    },
+    {
+      "type": "x-mitre-tactic",
+      "id": "x-mitre-tactic--glss-link-protocol-exploitation",
+      "name": "Link Protocol Exploitation",
+      "description": "Techniques exploiting vulnerabilities in space communication protocols (CCSDS, TT&C, ISL).",
+      "x_mitre_shortname": "link-protocol-exploitation",
+      "x_glss_segment": "link",
+      "created": "2026-02-15T00:00:00.000Z",
+      "modified": "2026-02-15T00:00:00.000Z"
+    },
+    {
+      "type": "x-mitre-tactic",
+      "id": "x-mitre-tactic--glss-space-initial-compromise",
+      "name": "Space Initial Compromise",
+      "description": "Techniques used to gain initial access to space segment systems including satellite bus and payload.",
+      "x_mitre_shortname": "space-initial-compromise",
+      "x_glss_segment": "space",
+      "created": "2026-02-15T00:00:00.000Z",
+      "modified": "2026-02-15T00:00:00.000Z"
+    },
+    {
+      "type": "x-mitre-tactic",
+      "id": "x-mitre-tactic--glss-space-payload-manipulation",
+      "name": "Space Payload Manipulation",
+      "description": "Techniques used to alter, disable or hijack satellite payload operations.",
+      "x_mitre_shortname": "space-payload-manipulation",
+      "x_glss_segment": "space",
+      "created": "2026-02-15T00:00:00.000Z",
+      "modified": "2026-02-15T00:00:00.000Z"
+    },
+    {
+      "type": "x-mitre-tactic",
+      "id": "x-mitre-tactic--glss-space-firmware-tampering",
+      "name": "Space Firmware Tampering",
+      "description": "Techniques targeting onboard firmware and software including malicious OTA updates and embedded AI manipulation.",
+      "x_mitre_shortname": "space-firmware-tampering",
+      "x_glss_segment": "space",
+      "created": "2026-02-15T00:00:00.000Z",
+      "modified": "2026-02-15T00:00:00.000Z"
+    },
+    {
+      "type": "x-mitre-tactic",
+      "id": "x-mitre-tactic--glss-space-data-exfiltration",
+      "name": "Space Data Exfiltration",
+      "description": "Techniques used to extract sensitive data from space segment systems.",
+      "x_mitre_shortname": "space-data-exfiltration",
+      "x_glss_segment": "space",
+      "created": "2026-02-15T00:00:00.000Z",
+      "modified": "2026-02-15T00:00:00.000Z"
+    },
+    {
+      "type": "x-mitre-tactic",
+      "id": "x-mitre-tactic--glss-space-denial-of-service",
+      "name": "Space Denial of Service",
+      "description": "Techniques used to disrupt or degrade satellite operations and services.",
+      "x_mitre_shortname": "space-denial-of-service",
+      "x_glss_segment": "space",
+      "created": "2026-02-15T00:00:00.000Z",
+      "modified": "2026-02-15T00:00:00.000Z"
+    },
+    {
+      "type": "x-mitre-tactic",
+      "id": "x-mitre-tactic--glss-space-orbital-impact",
+      "name": "Space Orbital Impact",
+      "description": "Techniques causing physical consequences in orbit including attitude control manipulation and orbital parameter modification.",
+      "x_mitre_shortname": "space-orbital-impact",
+      "x_glss_segment": "space",
+      "created": "2026-02-15T00:00:00.000Z",
+      "modified": "2026-02-15T00:00:00.000Z"
+    }
+  ]
+}
