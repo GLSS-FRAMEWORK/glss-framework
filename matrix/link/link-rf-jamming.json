@@ -1,0 +1,85 @@
+{
+  "glss_technique_id": "glss-technique--link-rf-jamming",
+  "glss_technique_name": "RF jamming of space-ground links",
+  "glss_version": "1.0",
+  "glss_segment": "link",
+
+  "glss_tactic": {
+    "glss_tactic_id": "x-mitre-tactic--glss-link-denial-and-deception",
+    "glss_tactic_name": "Link Denial and Deception",
+    "glss_tactic_order": 4
+  },
+
+  "summary": "Émission de signaux radio intentionnels pour dégrader ou bloquer les communications entre le segment sol et le segment spatial (uplink ou downlink).",
+
+  "attack_mappings": [
+    {
+      "framework": "SPARTA",
+      "technique_id": "EX-0016",
+      "technique_name": "Jamming",
+      "subtechniques": [
+        "EX-0016.01 Uplink Jamming",
+        "EX-0016.02 Downlink Jamming",
+        "EX-0016.03 PNT Jamming"
+      ],
+      "references": [
+        "https://sparta.aerospace.org/technique/EX-0016/"
+      ]
+    }
+  ],
+
+  "threat_description": {
+    "high_level": "Un adversaire émet des signaux RF dans la même bande que la liaison satellite afin de réduire le rapport signal/bruit et de rendre les communications sol-espace inexploitables.",
+    "key_points": [
+      "Le jamming peut cibler l’uplink (brouillage de la liaison de commande ou de la télémétrie montante) ou le downlink (brouillage des liaisons de diffusion vers les terminaux au sol).",
+      "Les effets sont généralement réversibles : lorsque le jamming cesse ou que le système bascule sur un lien alternatif, le service peut être rétabli.",
+      "L’attribution est souvent difficile car les sources de jamming peuvent être mobiles, de faible puissance et se cacher dans le trafic RF ambiant."
+    ]
+  },
+
+  "link_context": {
+    "affected_links": [
+      "Command uplink",
+      "Telemetry downlink",
+      "Mission / payload data links",
+      "Navigation and timing signals (PNT/GNSS)"
+    ],
+    "attack_variants": [
+      "Broadband noise jamming (bruit large bande pour saturer le canal).",
+      "Narrowband jamming ciblant des fréquences spécifiques.",
+      "PNT/GNSS jamming pour perturber la position ou la synchronisation."
+    ]
+  },
+
+  "detection": {
+    "indicators": [
+      "Dégradation soudaine du rapport signal/bruit (SNR) sur une ou plusieurs liaisons.",
+      "Augmentation du taux d’erreur (BER) ou des réémissions sur les liaisons affectées.",
+      "Incohérences entre les mesures RF (puissance reçue, spectre) et l’activité attendue sur le plan de mission."
+    ]
+  },
+
+  "mitigations": {
+    "design": [
+      "Utilisation de techniques de protection électronique (spread spectrum, frequency hopping) adaptées aux contraintes de la mission.",
+      "Conception d’antennes à diagramme contrôlé (par ex. antennes à réseau phasé) pour mieux rejeter les sources de jamming hors lobe principal.",
+      "Redondance de liens (bandes de fréquences, sites sol, chemins alternatifs) pour la continuité de service."
+    ],
+    "operational": [
+      "Surveillance spectrale continue des bandes utilisées par la mission.",
+      "Plans de bascule vers des fréquences ou des liens alternatifs en cas de jamming détecté.",
+      "Coordination avec les autorités de régulation et les opérateurs régionaux pour localiser et traiter les sources de jamming persistantes."
+    ]
+  },
+
+  "metadata": {
+    "created_by": "glss-foundation",
+    "created_time": "2026-06-08T08:10:00Z",
+    "modified_time": "2026-06-08T08:10:00Z",
+    "labels": [
+      "segment:link",
+      "tactic:link-denial-and-deception",
+      "glss-core"
+    ]
+  }
+}
