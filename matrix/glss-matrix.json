@@ -245,6 +245,34 @@
       "x_glss_segment": "space",
       "created": "2026-02-15T00:00:00.000Z",
       "modified": "2026-02-15T00:00:00.000Z"
-    }
+    },
+    {
+      "type": "attack-pattern",
+      "id": "glss-technique--space-malicious-command-injection",
+      "name": "Malicious command injection on spacecraft",
+      "x_glss_segment": "space",
+      "x_glss_tactic_ref": "x-mitre-tactic--glss-space-command-and-control-abuse",
+      "description": "Injection de commandes non autorisées ou altérées vers le satellite (via commande directe ou via relais) pour modifier la configuration, changer le pointage, perturber la charge utile ou dégrader définitivement la mission. Inclut le contournement des mécanismes d’authentification/crypto du lien de commande.",
+      "external_references": [
+        {
+          "source_name": "glss-framework",
+          "url": "https://github.com/glss-framework/glss-framework/blob/main/matrix/space/space-malicious-command-injection.json"
+        },
+        {
+      "type": "attack-pattern",
+      "id": "glss-technique--link-rf-jamming",
+      "name": "RF jamming of space-ground links",
+      "x_glss_segment": "link",
+      "x_glss_tactic_ref": "x-mitre-tactic--glss-link-denial-and-deception",
+      "description": "Brouillage RF ou interférences intentionnelles sur les liaisons montantes ou descendantes (commande, télémétrie, payload) pour dégrader, interrompre ou rendre inexploitables les communications entre segments sol et spatial.",
+      "external_references": [
+        {
+          "source_name": "glss-framework",
+          "url": "https://github.com/GLSS-FRAMEWORK/glss-framework/blob/main/matrix/link/link-rf-jamming.json"
+        }
+  ]
+}
+  ]
+}
   ]
 }
