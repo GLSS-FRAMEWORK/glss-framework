@@ -3,7 +3,7 @@
   "id": "bundle--glss-framework-v1.1",
   "spec_version": "2.1",
   "created": "2026-02-15T00:00:00.000Z",
-  "modified": "2026-02-15T00:00:00.000Z",
+  "modified": "2026-06-08T00:00:00.000Z",
   "objects": [
     {
       "type": "x-mitre-matrix",
@@ -251,28 +251,32 @@
       "id": "glss-technique--space-malicious-command-injection",
       "name": "Malicious command injection on spacecraft",
       "x_glss_segment": "space",
-      "x_glss_tactic_ref": "x-mitre-tactic--glss-space-command-and-control-abuse",
+      "x_glss_tactic_ref": "x-mitre-tactic--glss-space-payload-manipulation",
       "description": "Injection de commandes non autorisées ou altérées vers le satellite (via commande directe ou via relais) pour modifier la configuration, changer le pointage, perturber la charge utile ou dégrader définitivement la mission. Inclut le contournement des mécanismes d’authentification/crypto du lien de commande.",
+      "created": "2026-06-08T00:00:00.000Z",
+      "modified": "2026-06-08T00:00:00.000Z",
       "external_references": [
         {
           "source_name": "glss-framework",
           "url": "https://github.com/glss-framework/glss-framework/blob/main/matrix/space/space-malicious-command-injection.json"
-        },
-        {
+        }
+      ]
+    },
+    {
       "type": "attack-pattern",
       "id": "glss-technique--link-rf-jamming",
       "name": "RF jamming of space-ground links",
       "x_glss_segment": "link",
-      "x_glss_tactic_ref": "x-mitre-tactic--glss-link-denial-and-deception",
+      "x_glss_tactic_ref": "x-mitre-tactic--glss-link-signal-jamming",
       "description": "Brouillage RF ou interférences intentionnelles sur les liaisons montantes ou descendantes (commande, télémétrie, payload) pour dégrader, interrompre ou rendre inexploitables les communications entre segments sol et spatial.",
+      "created": "2026-06-08T00:00:00.000Z",
+      "modified": "2026-06-08T00:00:00.000Z",
       "external_references": [
         {
           "source_name": "glss-framework",
-          "url": "https://github.com/GLSS-FRAMEWORK/glss-framework/blob/main/matrix/link/link-rf-jamming.json"
+          "url": "https://github.com/glss-framework/glss-framework/blob/main/matrix/link/link-rf-jamming.json"
         }
-  ]
-}
-  ]
-}
+      ]
+    }
   ]
 }
