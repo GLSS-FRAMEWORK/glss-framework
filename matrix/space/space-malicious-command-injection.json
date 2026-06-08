@@ -1,0 +1,132 @@
+{
+  "glss_technique_id": "glss-technique--space-malicious-command-injection",
+  "glss_technique_name": "Malicious command injection on spacecraft",
+  "glss_version": "1.0",
+  "glss_segment": "space",
+
+  "glss_tactic": {
+    "glss_tactic_id": "x-mitre-tactic--glss-space-command-and-control-abuse",
+    "glss_tactic_name": "Space Command & Control Abuse",
+    "glss_tactic_order": 5
+  },
+
+  "summary": "Injection de commandes non autorisées ou altérées vers le satellite afin de modifier son comportement (configuration, attitude, orbite, charge utile) en contournant ou en abusant des protections du lien de commande.",
+
+  "attack_mappings": [
+    {
+      "framework": "SPARTA/SPACE-SHIELD",
+      "tactic_name": "Command Link Intrusion",
+      "technique_name": "Unauthorized Command Injection",
+      "technique_id": "SPARTA-CMD-UNAUTH-INJECT",
+      "references": [
+        "https://sparta.aerospace.org",
+        "https://spaceshield.esa.int"
+      ]
+    }
+  ],
+
+  "threat_description": {
+    "high_level": "Un adversaire parvient à émettre des commandes que le satellite considère comme légitimes, soit en compromettant le segment sol, soit en usurpant ou en répliquant le canal de commande. Ces commandes peuvent changer la configuration, perturber la mission ou dégrader définitivement le système spatial.",
+    "detailed": [
+      "L’attaquant obtient un accès à un système de contrôle au sol ou à l’infrastructure de télécommande, ou bien met en place un émetteur capable d’injecter des trames de commande sur le lien montant.",
+      "Il contourne ou casse les mécanismes de protection (authentification, chiffrement, codes de verrouillage, crypto mode) du lien de commande.",
+      "Il envoie des commandes malveillantes : reconfiguration non autorisée, changements de tables de pointage, modification du plan de mission, bascule de mode de vol, désactivation de protections de sûreté.",
+      "Les effets vont de la perturbation temporaire à la perte durable de la mission (perte de contrôle, consommation excessive de carburant, mise en safe-mode permanent)."
+    ]
+  },
+
+  "space_context": {
+    "affected_assets": [
+      "Flight software",
+      "On-board command decoder",
+      "Attitude and orbit control system (AOCS)",
+      "Payload control electronics",
+      "On-board data handling bus (e.g. MIL-STD-1553, SpaceWire)"
+    ],
+    "entry_points": [
+      "Primary and backup command uplink chains",
+      "Cross-link command paths (inter-satellite links)",
+      "Relay satellites or hosted payload command interfaces"
+    ]
+  },
+
+  "kill_chain_context": {
+    "kill_chain_name": "GLSS Ground–Link–Space",
+    "phase_name": "Space Command & Control Abuse",
+    "typical_preceding_phases": [
+      "Ground Initial Access",
+      "Ground Credential Access",
+      "Ground Privilege Escalation",
+      "Link Denial and Deception / Link Interception"
+    ]
+  },
+
+  "examples": [
+    {
+      "title": "Intrusion sur le lien de commande depuis un sol compromis",
+      "description": "Après compromission du centre de contrôle, l’attaquant utilise l’infrastructure légitime de télécommande pour envoyer des commandes modifiant la configuration d’attitude afin de dégrader la mission.",
+      "references": [
+        "MITRE, A Cyber Attack-Centric View of Commercial Space Vehicles and the Space Ecosystem",
+        "NASA, Direction to Protect Command Link and Other Communications to Robotic Spacecraft"
+      ]
+    },
+    {
+      "title": "Usurpation RF du canal de commande",
+      "description": "L’attaquant déploie un émetteur RF capable de reproduire les trames de commande et d’apparaître comme un utilisateur autorisé, injectant des commandes qui reprogramment des paramètres critiques du satellite.",
+      "references": [
+        "CSIS, Space System Threats (description du spoofing et de l’insertion de fausses commandes)"
+      ]
+    }
+  ],
+
+  "detection": {
+    "ground_side": [
+      "Corrélation des commandes émises avec les profils opérateurs connus (horaires, procédures nominales).",
+      "Surveillance du plan de mission et des commandes critiques (attitude, orbite, configuration payload) avec validation indépendante et principe de double commande.",
+      "Analyse des logs de systèmes sol et des événements de sécurité avant émission de commandes sensibles."
+    ],
+    "space_side": [
+      "Surveillance du trafic bus (MIL-STD-1553, SpaceWire) à bord pour détecter des séquences de commandes anormales ou non prévues par les procédures de vol.",
+      "Vérification continue de la cohérence entre commandes reçues, télémétrie et modes de vol attendus.",
+      "Mécanismes d’alerte automatique en cas de séquence de commandes dépassant des seuils ou modifiant des paramètres protégés."
+    ]
+  },
+
+  "mitigations": {
+    "design": [
+      "Authentification forte et chiffrement du lien de commande (clé unique par mission ou par satellite, rotation régulière des clés).",
+      "Séparation stricte des rôles et des profils de commande (opérations nominales, opérations critiques, procédures exceptionnelles).",
+      "Validation en plusieurs étapes (multi-person approval) pour l’envoi de commandes critiques."
+    ],
+    "operational": [
+      "Gestion rigoureuse des clés et du matériel crypto, avec inventaire, rotation et révocation.",
+      "Procédures d’arrêt d’urgence et modes dégradés prédéfinis pour reprendre le contrôle en cas d’activité suspecte sur le lien de commande.",
+      "Tests réguliers des procédures de reprise de contrôle et des plans de réponse à incident cyber sur le segment spatial."
+    ]
+  },
+
+  "regulatory_and_best_practices": {
+    "guidance": [
+      "NASA – Direction to Protect Command Link and Other Communications to Robotic Spacecraft",
+      "Aerospace – Cybersecurity Protections for Spacecraft (command link intrusion, monitoring du bus et de la télémétrie)",
+      "MITRE – A Cyber Attack-Centric View of Commercial Space Vehicles and the Space Ecosystem"
+    ],
+    "keywords": [
+      "command link protection",
+      "telecommand authentication and encryption",
+      "on-board monitoring of bus and commands",
+      "spacecraft cyber incident response"
+    ]
+  },
+
+  "metadata": {
+    "created_by": "glss-foundation",
+    "created_time": "2026-06-08T08:00:00Z",
+    "modified_time": "2026-06-08T08:00:00Z",
+    "labels": [
+      "segment:space",
+      "tactic:space-command-control-abuse",
+      "glss-core"
+    ]
+  }
+}
